@@ -44,7 +44,7 @@ export function App() {
               here
             </a>
             . Please select all zones and/or domains you want to migrate and
-            make sure the "DNS:Read" permission is set.
+            make sure the &quot;DNS:Read&quot; permission is set.
           </p>
           <input
             id="cf-api-key"
@@ -96,20 +96,20 @@ export function App() {
             {zones
               .filter((i) => i.canMigrate)
               .map((i) => (
-                <li className="ml-4">{i.name}</li>
+                <li key={i.id} className="ml-4">{i.name}</li>
               ))}
           </ul>
           {zones.filter((i) => !i.canMigrate).length > 0 && (
             <>
               <p className="text-bold">
-                We couldn't migrate these DNS zones because they are already
-                registered on Bunny.net:
+                We couldn&apos;t migrate these DNS zones because they are already
+                registered on Bun  ny.net:
               </p>
               <ul>
                 {zones
                   .filter((i) => !i.canMigrate)
                   .map((i) => (
-                    <li className="ml-4">{i.name}</li>
+                    <li key={i.id} className="ml-4">{i.name}</li>
                   ))}
               </ul>
             </>
